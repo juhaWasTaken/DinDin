@@ -182,18 +182,6 @@ dindin/
 
 ---
 
-## 🗺️ Hoja de ruta
-
-- [x] **Etapa 1 — Estructura conceptual y arquitectura**
-- [x] **Etapa 2 — Diseño visual e interfaces** (HTML5 + CSS3)
-- [x] **Etapa 3 — Interactividad con JavaScript** (datos en el navegador)
-- [ ] **Etapa 4 — Backend y persistencia**: PHP + MySQL local, con CRUD de movimientos, presupuestos y metas
-- [ ] Animaciones y detalles de identidad (favicon, tipografía, logo)
-- [ ] Convertidor de divisas y más herramientas financieras
-- [ ] Reorganización del código en módulos y documentación técnica
-
----
-
 ## 🎓 Contexto académico
 
 DinDin nace como proyecto de una materia/certificación de **desarrollo web, interactividad y diseño multimedia**, y se construye por etapas: primero la arquitectura, luego el diseño, después la interactividad y, por último, la conexión con base de datos.
@@ -202,7 +190,7 @@ DinDin nace como proyecto de una materia/certificación de **desarrollo web, int
 
 ## 👤 Autor
 
-**Carlos Gallaga** — [@tu-usuario](https://github.com/<tu-usuario>)
+**Carlos Gallaga** 
 
 ---
 
