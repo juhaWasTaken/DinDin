@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración | DinDin</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/icons.js"></script>
+    <script src="../js/theme.js"></script>
+</head>
+<body data-page="configuracion" data-root="../">
+<div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Finanzas personales</p>
+                <h1>Configuración</h1>
+                <p class="subtitle">Personaliza tu cuenta y administra tus datos.</p>
+            </div>
+            <div class="topbar-actions" id="topbar-actions"></div>
+        </header>
+
+        <div class="settings-stack">
+
+            <div class="notice warning" id="storage-warning" hidden>
+                Tu navegador no permite guardar datos en este momento (por ejemplo, en modo privado). Lo que registres se perderá al cerrar la página.
+            </div>
+
+            <form id="cfg-form" class="settings-stack" novalidate>
+                <article class="panel">
+                    <div class="panel-header"><div><h2>Perfil</h2><p>Cómo quieres que te llame la app.</p></div></div>
+                    <div class="form-grid">
+                        <label class="field">Nombre<input id="c-nombre" type="text" maxlength="40" autocomplete="given-name" placeholder="Tu nombre"></label>
+                        <label class="field">Moneda
+                            <select id="c-moneda">
+                                <option value="MXN">Peso mexicano (MXN)</option>
+                                <option value="USD">Dólar estadounidense (USD)</option>
+                                <option value="EUR">Euro (EUR)</option>
+                            </select>
+                        </label>
+                        <label class="field">Saldo inicial (opcional)
+                            <input id="c-saldo" type="number" step="0.01" inputmode="decimal" placeholder="0">
+                            <small class="field-hint">Lo que ya tenías antes de empezar a registrar. Se suma al balance total.</small>
+                            <span class="field-error" id="c-error-saldo"></span>
+                        </label>
+                        <label class="field">Apariencia
+                            <select id="c-tema">
+                                <option value="system">Automática (según tu dispositivo)</option>
+                                <option value="light">Clara</option>
+                                <option value="dark">Oscura</option>
+                            </select>
+                        </label>
+                    </div>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-header"><div><h2>Avisos</h2><p>Se activarán al configurar tu presupuesto y tus pagos.</p></div></div>
+                    <div class="toggle-row"><div><strong>Alertas de presupuesto</strong><span>Avísame cuando una categoría llegue al 80% de su límite.</span></div><label class="switch"><input type="checkbox" id="n-presupuesto" aria-label="Alertas de presupuesto"><i></i></label></div>
+                    <div class="toggle-row"><div><strong>Recordatorio de pagos</strong><span>Avísame cuando se acerque un pago programado.</span></div><label class="switch"><input type="checkbox" id="n-pagos" aria-label="Recordatorio de pagos"><i></i></label></div>
+                </article>
+
+                <div class="settings-actions">
+                    <button type="button" class="secondary-button" id="c-cancelar">Cancelar</button>
+                    <button type="submit" class="primary-button">Guardar cambios</button>
+                </div>
+            </form>
+
+            <article class="panel">
+                <div class="panel-header"><div><h2>Tus datos</h2><p id="data-status">—</p></div></div>
+                <div class="toggle-row stack-mobile"><div><strong>Exportar copia de seguridad</strong><span>Descarga todos tus datos en un archivo. Tus datos viven solo en este navegador: haz copias con frecuencia.</span></div><button type="button" class="secondary-button inline" id="btn-exportar"><span data-icon="download"></span>Exportar</button></div>
+                <div class="toggle-row stack-mobile"><div><strong>Restaurar una copia</strong><span>Carga un archivo exportado antes. Reemplaza tus datos actuales.</span></div><button type="button" class="secondary-button inline" id="btn-importar"><span data-icon="upload"></span>Importar</button><input type="file" id="file-importar" accept="application/json,.json" hidden></div>
+                <div class="toggle-row stack-mobile"><div><strong>Datos de ejemplo</strong><span>Llena la app con movimientos y metas de muestra para explorarla.</span></div><button type="button" class="secondary-button inline" id="btn-demo">Cargar ejemplo</button></div>
+                <div class="toggle-row stack-mobile"><div><strong>Borrar todos mis datos</strong><span>Elimina movimientos y metas de este navegador. No se puede deshacer.</span></div><button type="button" class="danger-button" id="btn-borrar">Borrar datos</button></div>
+            </article>
+
+        </div>
+    </main>
+</div>
+
+<script src="../js/store.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/configuracion.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes | DinDin</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/icons.js"></script>
+    <script src="../js/theme.js"></script>
+</head>
+<body data-page="reportes" data-root="../">
+<div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+
+                <p class="eyebrow">Finanzas personales</p>
+                <h1>Reportes</h1>
+                <p class="subtitle">Analiza tu comportamiento financiero.</p>
+            </div>
+            <div class="topbar-actions" id="topbar-actions"></div>
+        </header>
+
+        <div class="page-toolbar">
+            <label class="date-selector">
+                <span data-icon="calendar"></span>
+                <select id="r-periodo" aria-label="Periodo del reporte"></select>
+                <span data-icon="chevron-down"></span>
+            </label>
+            <div class="toolbar-buttons">
+                <button type="button" class="secondary-button inline" id="btn-imprimir"><span data-icon="printer"></span>Imprimir</button>
+                <button type="button" class="primary-button" id="btn-exportar"><span data-icon="download"></span>Exportar CSV</button>
+            </div>
+        </div>
+
+        <div id="r-empty" hidden></div>
+
+        <div id="r-content">
+            <p class="print-only" id="r-print"></p>
+
+            <section class="budget-summary">
+            <article class="budget-summary-card">
+                <div class="budget-summary-top"><span>Ingresos</span><div class="summary-icon income-icon" data-icon="trending-up"></div></div>
+                <strong id="r-ing">$0</strong>
+                <span id="r-ing-d"></span>
+            </article>
+            <article class="budget-summary-card">
+                <div class="budget-summary-top"><span>Gastos</span><div class="summary-icon expense-icon" data-icon="trending-down"></div></div>
+                <strong id="r-gas">$0</strong>
+                <span id="r-gas-d"></span>
+            </article>
+            <article class="budget-summary-card">
+                <div class="budget-summary-top"><span>Ahorro neto</span><div class="summary-icon balance-icon" data-icon="piggy-bank"></div></div>
+                <strong id="r-aho">$0</strong>
+                <span id="r-aho-d"></span>
+            </article>
+            </section>
+
+            <section class="budget-layout">
+                <article class="panel">
+                    <div class="panel-header">
+                        <div><h2>Ingresos vs gastos</h2><p id="r-chart-sub"></p></div>
+                        <div class="legend"><span><i></i>Ingresos</span><span><i class="alt"></i>Gastos</span></div>
+                    </div>
+                    <div id="r-chart"></div>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-header"><div><h2>Gastos por categoría</h2><p id="r-cat-sub"></p></div></div>
+                    <div class="budget-list" id="r-cats"></div>
+                </article>
+            </section>
+
+            <section class="budget-layout report-row">
+                <article class="panel">
+                    <div class="panel-header"><div><h2>Mayores gastos</h2><p>Los 5 gastos más grandes del periodo.</p></div></div>
+                    <div class="transactions" id="r-top"></div>
+                </article>
+
+                <div class="budget-side-column">
+                    <article class="panel">
+                        <div class="panel-header"><div><h2>Ingresos por categoría</h2><p>De dónde viene tu dinero.</p></div></div>
+                        <div class="budget-list" id="r-ing-cats"></div>
+                    </article>
+
+                    <article class="panel">
+                        <div class="panel-header"><div><h2>Lo más destacado</h2><p>Observaciones sobre este periodo.</p></div></div>
+                        <div id="r-insights"></div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+    </main>
+</div>
+<script src="../js/store.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/reportes.js"></script>
+</body>
+</html>

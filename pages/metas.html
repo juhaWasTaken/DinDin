@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metas | DinDin</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/icons.js"></script>
+    <script src="../js/theme.js"></script>
+</head>
+<body data-page="metas" data-root="../">
+<div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+
+                <p class="eyebrow">Finanzas personales</p>
+                <h1>Metas de ahorro</h1>
+                <p class="subtitle">Define tus objetivos y sigue tu progreso.</p>
+            </div>
+            <div class="topbar-actions" id="topbar-actions"></div>
+        </header>
+
+        <div class="goals-toolbar">
+            <div>
+                <span class="toolbar-label">Mis metas</span>
+                <p>Administra tus objetivos de ahorro.</p>
+            </div>
+            <button type="button" class="primary-button" id="btn-nueva"><span data-icon="plus"></span>Nueva meta</button>
+        </div>
+
+        <section class="goals-summary">
+            <article class="goals-summary-card">
+                <div class="summary-card-icon blue" data-icon="piggy-bank"></div>
+                <div><span>Total ahorrado</span><strong id="m-ahorrado">0</strong><small id="m-ahorrado-d">En todas tus metas</small></div>
+            </article>
+            <article class="goals-summary-card">
+                <div class="summary-card-icon purple" data-icon="flag"></div>
+                <div><span>Objetivo total</span><strong id="m-objetivo">0</strong><small id="m-objetivo-d">De todas tus metas</small></div>
+            </article>
+            <article class="goals-summary-card">
+                <div class="summary-card-icon green" data-icon="trending-up"></div>
+                <div><span>Progreso general</span><strong id="m-pct">0</strong><small id="m-pct-d"></small></div>
+            </article>
+            <article class="goals-summary-card">
+                <div class="summary-card-icon orange" data-icon="target"></div>
+                <div><span>Metas activas</span><strong id="m-activas">0</strong><small id="m-activas-d"></small></div>
+            </article>
+        </section>
+
+        <section class="goals-layout">
+
+            <div class="goals-main">
+                <div class="panel-header">
+                    <div><h2>Mis metas</h2><p>Visualiza el progreso de tus objetivos.</p></div>
+                    <div class="segmented filter" role="radiogroup" aria-label="Filtrar metas">
+                        <label><input type="radio" name="filtro" value="todas" checked><span>Todas</span></label>
+                        <label><input type="radio" name="filtro" value="activas"><span>Activas</span></label>
+                        <label><input type="radio" name="filtro" value="completadas"><span>Completadas</span></label>
+                    </div>
+                </div>
+                <div class="goals-list" id="m-lista"></div>
+            </div>
+
+            <aside class="goals-side-column">
+                <div class="panel goal-overview">
+                    <div class="panel-header"><div><h2>Progreso general</h2><p>Todas tus metas</p></div></div>
+                    <div class="goal-circle" id="m-circle">
+                        <div class="goal-circle-inner"><strong id="m-circle-pct">0%</strong><span>Completado</span></div>
+                    </div>
+                    <div class="goal-overview-stats">
+                        <div><span>Ahorrado</span><strong id="m-ov-ahorrado">$0</strong></div>
+                        <div><span>Restante</span><strong id="m-ov-restante">$0</strong></div>
+                    </div>
+                </div>
+
+                <div class="panel next-goal">
+                    <div class="panel-header"><div><h2>Próxima meta</h2><p>La más cercana a completarse</p></div></div>
+                    <div id="m-next"></div>
+                </div>
+
+                <div class="panel saving-tip">
+                    <div class="tip-icon">💡</div>
+                    <div><h3>Consejo de ahorro</h3><p id="m-tip"></p></div>
+                </div>
+            </aside>
+
+        </section>
+    </main>
+</div>
+<script src="../js/store.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/metas.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimientos | DinDin</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/icons.js"></script>
+    <script src="../js/theme.js"></script>
+</head>
+<body data-page="movimientos" data-root="../">
+<div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Finanzas personales</p>
+                <h1>Movimientos</h1>
+                <p class="subtitle">Consulta y administra tus ingresos y gastos.</p>
+            </div>
+            <div class="topbar-actions" id="topbar-actions"></div>
+        </header>
+
+        <section class="movement-summary">
+            <article class="summary-card">
+                <div class="summary-icon income-icon" data-icon="arrow-up"></div>
+                <div><span>Ingresos</span><strong id="s-ingresos">$0</strong></div>
+            </article>
+            <article class="summary-card">
+                <div class="summary-icon expense-icon" data-icon="arrow-down"></div>
+                <div><span>Gastos</span><strong id="s-gastos">$0</strong></div>
+            </article>
+            <article class="summary-card">
+                <div class="summary-icon balance-icon" data-icon="wallet"></div>
+                <div><span>Balance</span><strong id="s-balance">$0</strong></div>
+            </article>
+        </section>
+
+        <section class="panel movements-panel">
+
+            <div class="movements-toolbar">
+                <div>
+                    <h2>Historial de movimientos</h2>
+                    <p>Busca, filtra y administra tus ingresos y gastos.</p>
+                </div>
+                <div class="toolbar-buttons">
+                    <button type="button" class="secondary-button inline" data-act="csv"><span data-icon="download"></span>Exportar CSV</button>
+                    <button type="button" class="primary-button" data-act="nuevo"><span data-icon="plus"></span>Agregar movimiento</button>
+                </div>
+            </div>
+
+            <div class="filters">
+                <div class="search-box">
+                    <span data-icon="search"></span>
+                    <input id="f-q" type="text" placeholder="Buscar movimiento..." aria-label="Buscar movimiento" autocomplete="off">
+                </div>
+                <select id="f-tipo" aria-label="Tipo de movimiento">
+                    <option value="">Todos los movimientos</option>
+                    <option value="ingreso">Ingresos</option>
+                    <option value="gasto">Gastos</option>
+                </select>
+                <select id="f-cat" aria-label="Categoría"></select>
+                <select id="f-periodo" aria-label="Periodo"></select>
+            </div>
+
+            <div class="table-container" id="mov-table">
+                <table class="transactions-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th><th>Descripción</th><th>Categoría</th><th>Tipo</th><th>Método</th><th>Monto</th>
+                            <th><span class="sr-only">Acciones</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="mov-body"></tbody>
+                </table>
+            </div>
+
+            <div id="mov-empty" hidden></div>
+
+            <div class="pagination" id="mov-footer">
+                <span id="mov-info"></span>
+                <div class="pagination-buttons" id="mov-pages"></div>
+            </div>
+
+        </section>
+    </main>
+</div>
+
+<script src="../js/store.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/movimientos.js"></script>
+</body>
+</html>

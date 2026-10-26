@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto | DinDin</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/icons.js"></script>
+    <script src="../js/theme.js"></script>
+</head>
+<body data-page="presupuesto" data-root="../">
+<div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+
+                    <p class="eyebrow">Finanzas personales</p>
+
+                    <h1>Presupuesto</h1>
+
+                    <p class="subtitle">
+                        Controla tus límites de gasto y administra tu presupuesto.
+                    </p>
+            </div>
+            <div class="topbar-actions" id="topbar-actions"></div>
+        </header>
+
+        <div class="budget-toolbar">
+            <div class="month-nav" role="group" aria-label="Mes del presupuesto">
+                <button type="button" class="icon-button" id="mes-prev" data-icon="arrow-left" aria-label="Mes anterior"></button>
+                <strong id="mes-label">—</strong>
+                <button type="button" class="icon-button" id="mes-next" data-icon="arrow-right" aria-label="Mes siguiente"></button>
+            </div>
+            <div class="toolbar-buttons">
+                <button type="button" class="secondary-button inline" id="btn-sugerir"><span data-icon="zap"></span>Sugerir límites</button>
+                <button type="button" class="primary-button" id="btn-nueva-cat"><span data-icon="plus"></span>Nueva categoría</button>
+            </div>
+        </div>
+
+        <div class="notice info" id="p-hint" hidden>
+            Aún no defines límites. Ponle un límite mensual a cada categoría (menú ⋮ → Editar) o pulsa «Sugerir límites» para calcularlos con tus propios gastos.
+        </div>
+
+        <section class="budget-summary">
+            <article class="budget-summary-card">
+                <div class="budget-summary-top"><span>Presupuesto total</span><div class="summary-icon balance-icon" data-icon="wallet"></div></div>
+                <strong id="p-total">$0</strong>
+                <span id="p-total-d"></span>
+            </article>
+            <article class="budget-summary-card">
+                <div class="budget-summary-top"><span>Total gastado</span><div class="summary-icon expense-icon" data-icon="trending-down"></div></div>
+                <strong id="p-gastado">$0</strong>
+                <span id="p-gastado-d"></span>
+            </article>
+            <article class="budget-summary-card">
+                <div class="budget-summary-top"><span>Disponible</span><div class="summary-icon income-icon" data-icon="check-circle"></div></div>
+                <strong id="p-disp">$0</strong>
+                <span id="p-disp-d"></span>
+            </article>
+        </section>
+
+        <section class="budget-layout">
+
+            <article class="panel category-budget-panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Presupuesto por categoría</h2>
+                        <p>Cuánto llevas gastado frente a tu límite. Los límites aplican igual a todos los meses.</p>
+                    </div>
+                </div>
+                <div class="budget-list" id="p-lista"></div>
+            </article>
+
+            <div class="budget-side-column">
+                <article class="panel budget-overview-panel">
+                    <div class="panel-header"><div><h2>Resumen</h2><p>Estado de tu presupuesto.</p></div></div>
+                    <div class="budget-overview-chart"><div class="budget-donut" id="p-donut"></div></div>
+                    <div class="budget-overview-stats">
+                        <div><span>Gastado</span><strong id="s-gastado">$0</strong></div>
+                        <div><span id="s-disp-label">Disponible</span><strong id="s-disp">$0</strong></div>
+                    </div>
+                    <p class="side-note" id="s-extra" hidden></p>
+                </article>
+
+                <article class="panel budget-alerts-panel">
+                    <div class="panel-header"><div><h2>Alertas</h2><p>Categorías que requieren atención.</p></div></div>
+                    <div id="p-alertas"></div>
+                </article>
+            </div>
+
+        </section>
+    </main>
+</div>
+<script src="../js/store.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/presupuesto.js"></script>
+</body>
+</html>

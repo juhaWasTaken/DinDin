@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas | DinDin</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/icons.js"></script>
+    <script src="../js/theme.js"></script>
+</head>
+<body data-page="herramientas" data-root="../">
+<div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Finanzas personales</p>
+                <h1>Herramientas</h1>
+                <p class="subtitle">Calculadoras para tomar mejores decisiones.</p>
+            </div>
+            <div class="topbar-actions" id="topbar-actions"></div>
+        </header>
+
+        <section class="tools-grid">
+            <article class="panel tool-card">
+                <div class="budget-category-icon">🎯</div>
+                <h3>Calculadora de ahorro</h3>
+                <p>Descubre cuánto necesitas ahorrar cada mes para llegar a tu meta.</p>
+                <label class="field">Monto de la meta<input type="number" id="meta" min="0" placeholder="20000"></label>
+                <label class="field">Meses para lograrla<input type="number" id="meses" min="1" placeholder="6"></label>
+                <button class="primary-button" onclick="calcAhorro()">Calcular</button>
+                <div class="result-box" id="res-ahorro">Ingresa los datos para ver el resultado.</div>
+            </article>
+            <article class="panel tool-card">
+                <div class="budget-category-icon">📊</div>
+                <h3>Regla 50/30/20</h3>
+                <p>Divide tu ingreso mensual en necesidades, gustos y ahorro.</p>
+                <label class="field">Ingreso mensual<input type="number" id="ingreso" min="0" placeholder="22700"></label>
+                <button class="primary-button" onclick="calc503020()">Calcular</button>
+                <div class="result-box" id="res-503020">Ingresa tu ingreso para ver el reparto.</div>
+            </article>
+            <article class="panel tool-card disabled">
+                <div class="budget-category-icon">💱</div>
+                <h3>Convertidor de divisas</h3>
+                <p>Convierte pesos a otras monedas con el tipo de cambio actual.</p>
+                <button class="secondary-button" disabled>Próximamente</button>
+            </article>
+        </section>
+        <script>
+        const fmt=n=>'$'+Math.round(n).toLocaleString('es-MX');
+        function calcAhorro(){
+            const m=+document.getElementById('meta').value,t=+document.getElementById('meses').value;
+            document.getElementById('res-ahorro').textContent=(m>0&&t>0)?'Debes ahorrar '+fmt(m/t)+' al mes.':'Escribe un monto y un número de meses válidos.';
+        }
+        function calc503020(){
+            const i=+document.getElementById('ingreso').value;
+            document.getElementById('res-503020').innerHTML=i>0?'Necesidades: <b>'+fmt(i*.5)+'</b><br>Gustos: <b>'+fmt(i*.3)+'</b><br>Ahorro: <b>'+fmt(i*.2)+'</b>':'Escribe un ingreso válido.';
+        }
+        </script>
+    </main>
+</div>
+<script src="../js/store.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/layout.js"></script>
+</body>
+</html>

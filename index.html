@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DinDin | Tus finanzas personales</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/icons.js"></script>
+    <script src="js/theme.js"></script>
+</head>
+<body data-page="index" data-root="">
+<div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Resumen financiero</p>
+                <h1 id="greeting">Bienvenido</h1>
+                <p class="subtitle">Esto es lo que está pasando con tus finanzas.</p>
+            </div>
+            <div class="topbar-actions" id="topbar-actions"></div>
+        </header>
+
+        <section class="dashboard">
+
+            <div class="dashboard-toolbar">
+                <label class="date-selector">
+                    <span data-icon="calendar"></span>
+                    <select id="periodo" aria-label="Periodo de ingresos y gastos"></select>
+                    <span data-icon="chevron-down"></span>
+                </label>
+                <a class="primary-button" href="pages/movimientos.html?nuevo=1"><span data-icon="plus"></span>Agregar movimiento</a>
+            </div>
+
+            <section class="financial-cards">
+                <article class="financial-card">
+                    <div class="card-header"><span>Balance total</span><span class="card-icon" data-icon="wallet"></span></div>
+                    <strong class="amount" id="c-balance">$0</strong>
+                    <span class="card-description">Disponible actualmente</span>
+                </article>
+                <article class="financial-card">
+                    <div class="card-header"><span>Ingresos</span><span class="card-icon" data-icon="trending-up"></span></div>
+                    <strong class="amount" id="c-ingresos">$0</strong>
+                    <span class="card-description" id="d-ingresos">Este mes</span>
+                </article>
+                <article class="financial-card">
+                    <div class="card-header"><span>Gastos</span><span class="card-icon" data-icon="trending-down"></span></div>
+                    <strong class="amount" id="c-gastos">$0</strong>
+                    <span class="card-description" id="d-gastos">Este mes</span>
+                </article>
+                <article class="financial-card">
+                    <div class="card-header"><span>Ahorrado</span><span class="card-icon" data-icon="piggy-bank"></span></div>
+                    <strong class="amount" id="c-ahorrado">$0</strong>
+                    <span class="card-description">En tus metas de ahorro</span>
+                </article>
+            </section>
+
+            <section class="dashboard-grid">
+                <article class="panel money-flow">
+                    <div class="panel-header">
+                        <div><h2>Flujo de dinero</h2><p>Ingresos y gastos de los últimos 6 meses</p></div>
+                    </div>
+                    <div id="chart-box"></div>
+                </article>
+
+                <article class="panel budget-panel">
+                    <div class="panel-header">
+                        <div><h2>Presupuesto</h2><p>Este mes</p></div>
+                        <a href="pages/presupuesto.html">Ver todo →</a>
+                    </div>
+                    <div class="budget-circle ring" id="budget-ring"></div>
+                    <div class="budget-categories" id="budget-chips"></div>
+                </article>
+            </section>
+
+            <section class="dashboard-grid bottom-grid">
+                <article class="panel transactions-panel">
+                    <div class="panel-header">
+                        <div><h2>Movimientos recientes</h2><p>Últimos ingresos y gastos registrados</p></div>
+                        <a href="pages/movimientos.html">Ver todo →</a>
+                    </div>
+                    <div class="transactions" id="recent"></div>
+                </article>
+
+                <article class="panel goals-panel">
+                    <div class="panel-header">
+                        <h2>Metas de ahorro</h2>
+                        <a href="pages/metas.html">Ver todo →</a>
+                    </div>
+                    <div id="goals"></div>
+                </article>
+            </section>
+
+        </section>
+    </main>
+</div>
+
+<script src="js/store.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
